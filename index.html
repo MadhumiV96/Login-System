@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Home Page</title>
+
+<script type="text/javascript">
+
+function clearForms()
+{
+	var i;
+	for(i=0;(i<document.forms.length);i++)
+		{
+			document.forms[i].reset();
+		
+		}
+}
+
+function checkLogin(){
+    var e=document.getElementById('un').value;
+    var p=document.myForm.pass.value;
+    
+    if(e=="" && p==""){
+        document.getElementById('error').innerHTML="Empty Username and Empty Password";
+        document.getElementById('un').focus();
+        return false;
+    }
+    else if(e!="" && p==""){
+        document.getElementById('error').innerHTML="Empty Password";
+        document.getElementById('ps').focus();
+        return false; 
+    }
+    
+    else if(e=="" && p!=""){
+        document.getElementById('error').innerHTML="Empty Username";
+        document.getElementById('un').focus();
+        return false; 
+    }
+}
+
+</script>
+
+
+</head>
+<body>
+
+<h1 align="center" style="background-color:#0A1E82; font-size:60px;color:white;">STUDENT&nbsp MANAGEMENT&nbsp SYSTEM</h1><br/><br/><br/><br/>
+
+
+<form method="post" action="login.jsp" name="myForm">
+
+<p id="error"></p>
+
+<center>
+<table border="1" width="70%" cellpadding="10">
+
+<thead>
+<tr>
+<th colspan="2"><img src="user.png" alt="user" width="75"><h2>Login&nbsp Here</h2></th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td style="font-weight:bold;">User Name :</td>
+<td><input type="text" id ="un" name="uname" value="" required="required" size="30"/></td>
+</tr>
+
+<tr>
+<td style="font-weight:bold;">Password :</td>
+<td><input type="password" id="ps" name="pass" value="" required="required" size="30"/></td>
+</tr>
+
+<tr>
+<td><input type="submit" value="Login" onclick="checkLogin()"  style="font-weight:bold;"></td>
+<td><input type="reset" value="Reset"  style="font-weight:bold;"></td>
+</tr>
+
+<tr>
+<td colspan="2" style="font-weight:bold;">Not Yet Registered?&nbsp&nbsp&nbsp<a href="reg.jsp">Register Here</a></td>
+</tr>
+
+</tbody>
+
+</table>
+</center>
+
+</form>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
